@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenEarth</title>
+  <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="nav">
+      <img src="./src/img/logo.png" alt="logo">
+      <div class="menu">
+        <a href="#">Info</a>
+        <a href="#">About us</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="top">
+        <a href="#">LOGIN</a>
+        <div class="divider">|</div>
+        <div class="lang">
+          <img src="./src/img/Flag_of_the_United_Kingdom.png" alt="UK flag">
+          <a href="#">EN - UK (£)</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero" id="hero">
+      <div class="head">
+        <h1>Enjoy our hot summer deals</h1>  
+        <h3>from £69<sup>.50</sup></h3>
+        <button>Book now!</button>
+      </div>
+      <div class="arrows">
+        <img src="./src/img/hero/arrow_left.png" alt="Left" id="arrow_left">
+        <img src="./src/img/hero/arrow_right.png" alt="Right" id="arrow_right">
+      </div>
+      <script>
+        let imageData = {
+          1: {
+            src: "./src/img/hero/StockSnap_FDERTOPXR.png",
+            desc: "Image of people on a beach"
+          },
+          2: {
+            src: "./src/img/hero/StockSnap_ZXOBOKAJEQ.png",
+            desc: "Image of a woman using a laptop"
+          },
+          3: {
+            src: "./src/img/hero/photo-1446160657592-4782fb76fb99.png",
+            desc: "Image two women next to a Golden Gate Bridge"
+          }
+        }
+        let arrData = {
+          'imageSources': [
+            "./src/img/hero/StockSnap_FDERTOPXR.png",
+            "./src/img/hero/StockSnap_ZXOBOKAJEQ.png",
+            "./src/img/hero/photo-1446160657592-4782fb76fb99.png",
+          ]
+        }
+        let changeImage = () => {
+          let hero = document.getElementById("hero");
+          let left = document.getElementById("arrow_left");
+          let right = document.getElementById("arrow_right");
+          // arrData['imageSources'].forEach(img => {
+            
+          // });
+          hero.style.backgroundImage = `url(${arrData["imageSources"][1]})`;
+          right.onclick = () => {
+            let currentImage = hero.style.backgroundImage.replace('url(','').replace(')','').replace(/"/g, "");
+            let index = arrData['imageSources'].indexOf(currentImage);
+            let nextIndex = index+1;
+            if(nextIndex > (arrData['imageSources'].length-1))
+              nextIndex = 0;
+            hero.style.backgroundImage = `url(${arrData["imageSources"][nextIndex]})`;
+          }
+          left.onclick = () => {
+            let currentImage = hero.style.backgroundImage.replace('url(','').replace(')','').replace(/"/g, "");
+            let index = arrData['imageSources'].indexOf(currentImage);
+            let nextIndex = index-1;
+            if(nextIndex < 0)
+              nextIndex = (arrData['imageSources'].length-1);
+            hero.style.backgroundImage = `url(${arrData["imageSources"][nextIndex]})`;
+          }
+        }
+        changeImage()
+      </script>
+    </div>
+    <div class="usp">
+      <h5>LOW COST DOESN'T MEAN CHEAP</h5>
+      <h1>Fly smart, fly with Green Earth</h1>
+      <div class="usp_elements">
+        <div>
+          <img src="./src/img/usp/seat.png" alt="seat">         
+          <p><span>Reclinable seats</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
+        </div>
+        <div>
+          <img src="./src/img/usp/shoe.png" alt="shoe">  
+          <p><span>Plenty of legroom</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
+        </div>
+        <div>
+          <img src="./src/img/usp/cabin.png" alt="cabin">
+          <p><span>Free cabin luggage</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
+        </div>
+        <div>
+          <img src="./src/img/usp/smile.png" alt="smile">
+          <p><span>Friendly crew</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="offers_wrapper">
+      <script>
+        offers = {
+          "London": {
+            "img": ""
+          }
+        }
+      </script>
+      <h5>Showing our offers from</h5>
+      <div class="offers"></div>
+    </div>
+  </div>
+</body>
+
+</html>

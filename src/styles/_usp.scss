@@ -1,0 +1,39 @@
+.usp{
+  background-color: white;
+  text-align: center;
+  overflow: hidden;
+  span{
+    font-size: 18px;
+    line-height: 35px;
+  }
+  h5{
+    margin-top: 60px;
+    line-height: 20px;
+    color: #878787;
+  }
+  h1{
+    line-height: 20px;
+    margin: 0 0 60px 0;
+    font-size: 40px;
+    color: $customBlue;
+  }
+  .usp_elements{
+    width: 75%;
+    margin: auto;
+    text-align: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px 125px;
+    margin-bottom: 60px;
+    div{
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      align-items: center;
+      p{
+        padding: 0 35px;
+      }
+    }
+    
+
+  }
+}

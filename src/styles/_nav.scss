@@ -1,0 +1,44 @@
+$textColor: #002f9d;
+$langColor: #132e64;
+$backgroundColor: #FFF;
+$font: sans;
+.nav{
+  height: 110px;
+  padding: 0 90px;
+  display: grid;
+  grid-template-columns: 1fr 10fr 2fr;
+  color: $textColor;
+  background-color: $backgroundColor;
+  a{
+    text-decoration: none;
+    color: $textColor;
+  }
+  :nth-child(1){
+    margin: auto;
+  }
+  .menu{
+    min-width: 400px;
+    font-size: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-self: center;
+    justify-self: start;
+  }
+  .top{
+    display: grid;
+    grid-template-columns: 5fr 1fr 10fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .divider{
+      color: #e5e7e9;
+    }
+    .lang{
+      font-size: 1em;
+      color: $langColor;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      text-align: start;
+    }
+  }
+}
