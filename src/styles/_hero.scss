@@ -1,4 +1,4 @@
-.hero{
+.hero {
   width: 100%;
   height: 550px;
   background-image: url("../img/hero/StockSnap_ZXOBOKAJEQ.png");
@@ -6,14 +6,25 @@
   grid-template-columns: 3fr 1fr;
   align-items: center;
   text-align: center;
-  .head{
-    h1, h3{
-      color: $customBlue;
-      sup{
+  .head {
+    text-align: start;
+    margin: auto;
+    padding-right: 300px;
+    width: 350px;
+    h1 {
+      font-size: 40px;
+    }
+    h1,
+    h3 {
+      margin: 10px 0;
+      color: white;
+      font-weight: normal;
+      sup {
         font-size: 10px;
       }
     }
-    button{
+    button {
+      margin-top: 10px;
       width: 180px;
       height: 60px;
       font-size: 20px;
@@ -22,14 +33,40 @@
       color: white;
       border: 0;
     }
+    button:active {
+      background-color: $customDarkBlue;
+      transform: translateY(4px);
+    }
+    button:hover {
+      background-color: $customDarkBlue;
+    }
   }
-  .arrows{
-    *{
-      &:hover{
-        transform: scale(1.2)
+  .arrows {
+    * {
+      transition: $transition;
+      &:hover {
+        transform: scale(1.2);
       }
-      &:active{
+      &:active {
         opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero{
+    .head{
+      padding: 0;
+    }
+    .arrows {
+      * {
+        &:hover {
+          transform: none;
+        }
+        &:active {
+          opacity: 0.7;
+        }
       }
     }
   }

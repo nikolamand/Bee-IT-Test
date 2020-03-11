@@ -1,0 +1,143 @@
+.footer{
+  .top_bar{
+    display: inline-block;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: $customBlue;
+    p{
+      color: white;
+      font-size: 20px;
+      text-align: center;
+    }
+    .subscribe{
+      vertical-align: center;
+    }
+    .input{
+      vertical-align: center;
+      >div{
+        display: grid;
+        width: 400px;
+        margin: auto;
+        grid-template-columns: 5fr 1fr;
+        .text{
+          font-size: 16px;
+          background: 0;
+          padding-bottom: 5px;
+          border: 0;
+          border-bottom: 1px solid white;
+        }
+        .button{
+          font-size: 16px;
+          background: 0;
+          border: 0;
+          width: 60px;
+          border-bottom: 1px solid white;
+          color: white;
+          padding: 0;
+        }
+      }
+    }
+    .social{
+      height: 130px;
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+  }
+  .bottom_bar{
+    background-color: white;
+    border-bottom: 5px solid #38bdff;
+    padding-bottom: 20px;
+    color: gainsboro;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .payment_wrapper{
+      padding: 20px 0 0 90px;
+      *{
+        margin: 5px;
+      }
+    }
+    .terms_wrapper{
+      text-align: end;
+      padding: 35px 90px 0 0;
+      a{
+        color: gray;
+        text-decoration: none;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer{
+    .top_bar{
+      grid-template-columns: 1fr;
+      p{
+        font-size: 40px;
+      }
+      .input{
+        >div{
+          width: 90%;
+          grid-template-columns: 1fr;
+          .text{
+            font-size: 30px;
+          }
+          .button{
+            span{
+              display: none;
+            }
+            font-size: 30px;
+            background-color: white;
+            color: $customBlue;
+            width: 50%;
+            font-weight: bold;
+            height: 50px;
+            margin: 50px auto;
+            border: 0;
+          }
+        }
+      }
+      .social{
+        grid-template-columns: 1fr;
+        height: auto;
+        background-color: white;
+        text-align: center;
+        p{
+          color: $customBlue;
+        }
+        img{
+          filter: invert(1);
+        }
+      }
+    }
+    .bottom_bar{
+      grid-template-columns: 1fr;
+      .payment_wrapper{
+        margin: auto;
+        padding: 20px 0;
+      }
+      .terms_wrapper{
+        padding: 10px 0 20px 0;
+        text-align: center;
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .footer{
+    .top_bar{
+      .input{
+        >div{
+          .button{
+            width: 90%;
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+}

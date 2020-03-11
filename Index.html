@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GreenEarth</title>
   <link rel="stylesheet" href="./src/styles/style.css">
+  <script src="./src/js/index.js"></script>
 </head>
 
 <body>
@@ -22,13 +23,13 @@
         <div class="divider">|</div>
         <div class="lang">
           <img src="./src/img/Flag_of_the_United_Kingdom.png" alt="UK flag">
-          <a href="#">EN - UK (£)</a>
+          <a href="#"><span>EN - UK </span>(£)</a>
         </div>
       </div>
     </div>
     <div class="hero" id="hero">
       <div class="head">
-        <h1>Enjoy our hot summer deals</h1>  
+        <h1>Enjoy our hot summer deals</h1>
         <h3>from £69<sup>.50</sup></h3>
         <button>Book now!</button>
       </div>
@@ -36,89 +37,187 @@
         <img src="./src/img/hero/arrow_left.png" alt="Left" id="arrow_left">
         <img src="./src/img/hero/arrow_right.png" alt="Right" id="arrow_right">
       </div>
-      <script>
-        let imageData = {
-          1: {
-            src: "./src/img/hero/StockSnap_FDERTOPXR.png",
-            desc: "Image of people on a beach"
-          },
-          2: {
-            src: "./src/img/hero/StockSnap_ZXOBOKAJEQ.png",
-            desc: "Image of a woman using a laptop"
-          },
-          3: {
-            src: "./src/img/hero/photo-1446160657592-4782fb76fb99.png",
-            desc: "Image two women next to a Golden Gate Bridge"
-          }
-        }
-        let arrData = {
-          'imageSources': [
-            "./src/img/hero/StockSnap_FDERTOPXR.png",
-            "./src/img/hero/StockSnap_ZXOBOKAJEQ.png",
-            "./src/img/hero/photo-1446160657592-4782fb76fb99.png",
-          ]
-        }
-        let changeImage = () => {
-          let hero = document.getElementById("hero");
-          let left = document.getElementById("arrow_left");
-          let right = document.getElementById("arrow_right");
-          // arrData['imageSources'].forEach(img => {
-            
-          // });
-          hero.style.backgroundImage = `url(${arrData["imageSources"][1]})`;
-          right.onclick = () => {
-            let currentImage = hero.style.backgroundImage.replace('url(','').replace(')','').replace(/"/g, "");
-            let index = arrData['imageSources'].indexOf(currentImage);
-            let nextIndex = index+1;
-            if(nextIndex > (arrData['imageSources'].length-1))
-              nextIndex = 0;
-            hero.style.backgroundImage = `url(${arrData["imageSources"][nextIndex]})`;
-          }
-          left.onclick = () => {
-            let currentImage = hero.style.backgroundImage.replace('url(','').replace(')','').replace(/"/g, "");
-            let index = arrData['imageSources'].indexOf(currentImage);
-            let nextIndex = index-1;
-            if(nextIndex < 0)
-              nextIndex = (arrData['imageSources'].length-1);
-            hero.style.backgroundImage = `url(${arrData["imageSources"][nextIndex]})`;
-          }
-        }
-        changeImage()
-      </script>
     </div>
     <div class="usp">
       <h5>LOW COST DOESN'T MEAN CHEAP</h5>
-      <h1>Fly smart, fly with Green Earth</h1>
+      <h1>Fly smart, <br>fly with Green Earth</h1>
       <div class="usp_elements">
         <div>
-          <img src="./src/img/usp/seat.png" alt="seat">         
-          <p><span>Reclinable seats</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
+          <img src="./src/img/usp/seat.png" alt="seat">
+          <p><span>Reclinable seats</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate
+            ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
         </div>
         <div>
-          <img src="./src/img/usp/shoe.png" alt="shoe">  
-          <p><span>Plenty of legroom</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
+          <img src="./src/img/usp/shoe.png" alt="shoe">
+          <p><span>Plenty of legroom</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate
+            ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
         </div>
         <div>
           <img src="./src/img/usp/cabin.png" alt="cabin">
-          <p><span>Free cabin luggage</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
+          <p><span>Free cabin luggage</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+            cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
         </div>
         <div>
           <img src="./src/img/usp/smile.png" alt="smile">
-          <p><span>Friendly crew</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
+          <p><span>Friendly crew</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cupiditate
+            ipsum optio error libero iste laudantium, minima natus numquam velit?</p>
         </div>
       </div>
 
     </div>
     <div class="offers_wrapper">
-      <script>
-        offers = {
-          "London": {
-            "img": ""
-          }
-        }
-      </script>
-      <h5>Showing our offers from</h5>
-      <div class="offers"></div>
+      <div>
+        <h5>Showing <br>our offers from</h5>
+        <div class="offers" id="offers"></div>
+      </div>
+    </div>
+    <div class="inspiration_wrapper">
+      <div class="inspiration">
+        <p>Don’t know where to go?</p>
+        <div><a href="#">Let us inspire you</a> </div>
+      </div>
+    </div>
+    <div class="classes_wrapper">
+      <div class="intro">
+        <p>QUALITY FROM THE INSIDE</p>
+        <h1>Travel the way <br>you want</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulnisi ut aliquip ex ea commodo.
+          consequat.</p>
+      </div>
+      <div class="classes">
+        <a href="#">View all services & upgrades</a>
+        <ul class="tab-nav">
+          <li class="active"><a href="regular">Regular</a></li>
+          <li class=""><a href="plus">Plus</a></li>
+          <li class=""><a href="premium">Premium</a></li>
+        </ul>
+        <div class="classes_content">
+          <div id="regular" class="tab-pane active">
+            <img src="./src/img/classes/Ellipse 762.png" alt="image">
+            <p class="name_mob">Regular</p>
+            <div class="items">
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>Reclinable seats</p>
+              </div>
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>1 Hand luggage</p>
+              </div>
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>Extra leg room</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Extra cabin luggage</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Extra hold luggage</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Lounge access</p>
+              </div>
+            </div>
+          </div>
+          <div id="plus" class="tab-pane">
+            <p class="name_mob">Plus</p>
+            <img src="./src/img/classes/Ellipse 762.png" alt="image">
+            <div class="items">
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>Reclinable seats</p>
+              </div>
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>2 Hand luggage</p>
+              </div>
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>Extra leg room</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Extra cabin luggage</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Extra hold luggage</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Lounge access</p>
+              </div>
+            </div>
+          </div>
+          <div id="premium" class="tab-pane">
+            <p class="name_mob">Premium</p>
+            <img src="./src/img/classes/Ellipse 762.png" alt="image">
+            <div class="items">
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>Reclinable seats</p>
+              </div>
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>3 Hand luggage</p>
+              </div>
+              <div class="classes_item_yes">
+                <img src="./src/img/classes/v.png" alt="Included">
+                <p>Extra leg room</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Extra cabin luggage</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Extra hold luggage</p>
+              </div>
+              <div class="classes_item_no">
+                <img src="./src/img/classes/x.png" alt="Not Included">
+                <p>Lounge access</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="top_bar">
+        <div class="subscribe">
+          <p>Subscribe to our newsletter</p>
+        </div>
+        <div class="input">
+          <div>
+            <input type="text" class="text" id="email" name="email" placeholder="Enter your email address">
+            <button class="button" id="submit">Send <span>></span></button>
+          </div>
+        </div>
+        <div class="social">
+          <p>Follow us</p>
+          <div class="icons">
+            <a href="#"><img src="./src/img/footer/facebook.png" alt="facebook"></a>
+            <a href="#"><img src="./src/img/footer/twitter.png" alt="twitter"></a>
+            <a href="#"><img src="./src/img/footer/instagram.png" alt="instagram"></a>
+          </div>
+        </div>
+      </div>
+      <div class="bottom_bar">
+        <div class="payment_wrapper">
+          <a href="#"><img src="./src/img/footer/mc.png" alt="mc"></a>
+          <a href="#"><img src="./src/img/footer/visa.png" alt="visa"></a>
+          <a href="#"><img src="./src/img/footer/amex.png" alt="amex"></a>
+          <a href="#"><img src="./src/img/footer/paypal.png" alt="paypal"></a>          
+        </div>
+        <div class="terms_wrapper">
+          <a href="#">Terms & privacy</a>
+          <a href="#">Site Map</a>
+        </div>
+      </div>
     </div>
   </div>
 </body>
